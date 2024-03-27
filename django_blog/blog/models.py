@@ -9,4 +9,7 @@ class Post(models.Model):
     # auto_now_add=True maintains the initial time the object was created
     date_posted = models.DateTimeField(default=timezone.now)
     # if user is deleted, we wanna delete their posts as well
-    author = models.ForeignKey(User, on_delete=models.cascade)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.content
