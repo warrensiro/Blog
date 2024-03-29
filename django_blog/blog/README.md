@@ -9,3 +9,5 @@ In class meta in the forms file, we create a model that interacts with the user 
 Class Meta provides a nested namespace for configurartions and keeps them in place
 
 To use cripsy for styling of the forms, we install it in our environment then add it under installed apps in our settings file then also show its styling still in the same file.
+
+Class based views don't need us to create a forms model to handle the the view other than specifying the fields needed
