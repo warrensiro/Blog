@@ -15,6 +15,7 @@ class PostListView(ListView):
     template_name = 'blog/home.html'
     context_object_name = 'posts'
     ordering = ['-date_posted']
+    paginate_by = 2
 
 
 class PostDetailView(DetailView):
@@ -51,6 +52,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
     success_url = '/'
 
+    # This is to check if the author of the post is the one updating
     def test_func(self) -> bool | None:
         post = self.get_object()
         if self.request.user == post.author:

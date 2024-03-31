@@ -10,6 +10,11 @@
       <h2 class="article-title">{{ object.title }}</h2>
       <p class="article-content">{{ object.content }}</p>
     </div>
+    {% if object.author == user %}
+    <a class="btn btn-outline-info mt-1 mb-1" href="{% url "post-update" object.id %}">Update</a>
+    <a class="btn btn-outline-danger mt-1 mb-1" href="{% url "post-delete" object.id %}">Delete</a>
+    {% endif %}
   </article>
+  
 <script src="" async defer></script>
 {% endblock content %}
